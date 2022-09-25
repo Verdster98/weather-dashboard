@@ -12,3 +12,28 @@ var day3 = document.querySelector("#day3")
 var day4 = document.querySelector("#day4")
 var day5 = document.querySelector("#day5")
 
+
+var reset = function() {
+
+}
+
+$(document).ready(function () {
+    $("#search-btn").click(function(){
+        console.log("clicked button")
+
+        var searchText = $("citySearchTextarea").val().trim();
+
+        citiesArray.push(searchText)
+        sessionStorage.setItem(searchText)
+        
+        var lat = data.results[0].bounds.northeast.lat;
+        var lng = data.results[0].bounds.northeast.lng;
+
+        var apiWeatherUrl = "https://api.openweathermap.org/data/3.0/onecall?"
+        + "lat=" + lat
+        +"&lon=" + lon 
+        + "&units=imperial"
+        + "&appid=1fdacc243055ad2843e8dfca7a2a7ff3";
+        
+    })
+})
