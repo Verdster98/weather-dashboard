@@ -34,6 +34,15 @@ $(document).ready(function () {
         +"&lon=" + lon 
         + "&units=imperial"
         + "&appid=1fdacc243055ad2843e8dfca7a2a7ff3";
-        
+
+        fetch(apiWeatherUrl)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data)
+
+            $(".col-8").removeClass()
+        })
     })
 })
